@@ -60,6 +60,7 @@ public class BulkifyApexClass {
     public void DeleteAccountsLi(){
         list<Account> DelAccovar = [SELECT Id, Customer_Status__c FROM Account where Name like 'Bill_test%' limit 165];
         if(!DelAccovar.isEmpty()){
+            integer i =0;
             delete DelAccovar;
         }
         system.debug('successfully Deleted');
